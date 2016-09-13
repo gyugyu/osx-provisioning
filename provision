@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo xcodebuild -license
+# sudo xcodebuild -license
 
 which brew >/dev/null 2>&1
 if [ $? -ne 0 ]; then
@@ -8,6 +8,19 @@ if [ $? -ne 0 ]; then
     echo "install brew"
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
+
+which go >/dev/null 2&>1
+if [ $? -ne 0 ]; then
+    echo "not found command go"
+    echo "install go"
+    brew install go
+fi
+
+GOPATH=$HOME
+go get -u github.com/motemen/ghq
+
+GHQ_ROOT=$HOME/src
+ghq get -u https://github.com/gyugyu/osx-provisioning
 
 which ansible >/dev/null 2>&1
 if [ $? -ne 0 ]; then
