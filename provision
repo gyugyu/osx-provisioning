@@ -9,7 +9,7 @@ if [ $? -ne 0 ]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-which go >/dev/null 2&>1
+which go >/dev/null 2>&1
 if [ $? -ne 0 ]; then
     echo "not found command go"
     echo "install go"
