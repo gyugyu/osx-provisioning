@@ -17,7 +17,7 @@ if [ $? -ne 0 ]; then
 fi
 
 GOPATH=$HOME go get -u github.com/motemen/ghq
-GHQ_ROOT=$HOME/src ghq get -u https://github.com/gyugyu/osx-provisioning
+GHQ_ROOT=$HOME/src $/home/bin/ghq get -u https://github.com/gyugyu/osx-provisioning
 
 which ansible >/dev/null 2>&1
 if [ $? -ne 0 ]; then
