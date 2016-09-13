@@ -1,0 +1,41 @@
+- homebrew: update_homebrew=yes
+
+- homebrew_tap: name={{item}}
+  with_items:
+    - homebrew/dupes
+    - caskroom/cask
+
+- homebrew: name={{item}}
+  with_items:
+    - android-sdk
+    - curl
+    - git
+    - gibo
+    - jq
+    - nodebrew
+    - peco
+    - plenv
+    - pyenv
+    - pyenv-virtualenv
+    - rbenv
+    - ruby-build
+    - the_silver_searcher
+    - vim
+    - wget
+    - zsh
+    - zsh-completions
+
+- homebrew: name=openssh install_options=with-brewed-openssl,with-keychain-support
+
+- homebrew_cask: name={{item}}
+  with_items:
+    - appcleaner
+    - atom
+    - caffeine
+    - docker
+    - google-chrome
+    - iterm2
+    - karabiner
+    - slack
+    - vivaldi
+    - visual-studio-code
