@@ -16,11 +16,8 @@ if [ $? -ne 0 ]; then
     brew install go
 fi
 
-GOPATH=$HOME
-go get -u github.com/motemen/ghq
-
-GHQ_ROOT=$HOME/src
-ghq get -u https://github.com/gyugyu/osx-provisioning
+GOPATH=$HOME go get -u github.com/motemen/ghq
+GHQ_ROOT=$HOME/src ghq get -u https://github.com/gyugyu/osx-provisioning
 
 which ansible >/dev/null 2>&1
 if [ $? -ne 0 ]; then
