@@ -1,4 +1,4 @@
-- homebrew: update_homebrew=yes
+- homebrew: update_homebrew=yes upgrade_all=yes
 
 - homebrew_tap: name={{item}}
   with_items:
@@ -7,12 +7,12 @@
 
 - homebrew: name={{item}}
   with_items:
-    - android-sdk
     - curl
     - git
     - gibo
     - jq
-    - nodebrew
+    - mas
+    - nodenv
     - peco
     - plenv
     - pyenv
@@ -35,7 +35,10 @@
     - docker
     - google-chrome
     - iterm2
+    - java
     - karabiner
     - slack
     - vivaldi
     - visual-studio-code
+
+- homebrew: name=android-sdk

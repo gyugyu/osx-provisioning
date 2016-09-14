@@ -1,0 +1,7 @@
+- stat: path=~/.rbenv/versions/2.3.1
+  register: st
+
+- command: rbenv install 2.3.1
+  when: not st.stat.exists
+
+- command: rbenv global 2.3.1

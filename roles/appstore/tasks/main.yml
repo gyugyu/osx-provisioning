@@ -1,0 +1,3 @@
+- command: "mas install {{ item }}"
+  with_items:
+    - 443987910  # 1Password

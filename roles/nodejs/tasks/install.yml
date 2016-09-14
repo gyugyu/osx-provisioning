@@ -1,0 +1,7 @@
+- set_fact: version="{{ item }}"
+
+- stat: path="~/.nodenv/versions/{{ version }}"
+  register: st
+
+- command: "nodenv install {{ version }}"
+  when: not st.stat.exists

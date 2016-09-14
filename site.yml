@@ -1,3 +1,6 @@
 - hosts: localhost
   roles:
     - brew
+    - appstore
+    - nodejs
+    - ruby
