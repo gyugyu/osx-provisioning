@@ -1,0 +1,78 @@
+__brew_has() {
+  brew list | grep "$1" > /dev/null 2>&1
+  return $?
+}
+
+__has() {
+  which "$1" > /dev/null 2>&1
+  return $?
+}
+
+__peco_select_history() {
+  local tac
+  if __has "tac"; then
+    tac="tac"
+  else
+    tac="tail -r"
+  fi
+  BUFFER=$(history -n 1 | \
+    eval $tac | \
+    peco --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle clear-screen
+}
+
+# Golang
+export GOPATH=$HOME
+export PATH=$GOPATH/bin:$PATH
+
+__peco_select_repository() {
+  local root=$(ghq root)
+  local dir=$(ghq list | \
+    peco --query "$LBUFFER")
+  if [ -n $dir ]; then
+    BUFFER="cd $root/$dir"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+
+if __has "peco"; then
+  zle -N __peco_select_history
+  bindkey '^r' __peco_select_history
+  
+  if __has "ghq"; then
+    zle -N __peco_select_repository
+    bindkey '^u' __peco_select_repository
+  fi
+fi
+
+# Ruby
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# PHP
+if __has "ghq"; then
+  export PATH="$PATH:$(ghq root)/github.com/phpbrew/phpbrew/bin"
+  alias php-build="$(ghq root)/github.com/CHH/php-build/bin/php-build"
+fi
+export PATH=$HOME/.phpenv/bin:$PATH
+if which phpenv > /dev/null; then eval "$(phpenv init -)"; fi
+
+# Python
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# Perl
+if which plenv > /dev/null; then eval "$(plenv init -)"; fi
+
+# NodeJS
+export PATH=$HOME/.nodenv/shims:$PATH
+
+# Android
+export ANDROID_HOME=/usr/local/opt/android-sdk
+
+# Aliasing
+alias rm=rmtrash
+alias vi=/usr/local/bin/vim
+alias docker-killall="docker stop \$(docker ps -q)"
+alias docker-rmall="docker rm \$(docker ps -a -q)"
+alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'

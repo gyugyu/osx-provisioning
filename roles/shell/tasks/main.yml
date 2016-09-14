@@ -22,4 +22,8 @@
     - zpreztorc
     - zprofile
     - zshenv
+
+- file: src="~/src/github.com/gyugyu/osx-provisioning/roles/shell/files/{{ item }}" dest="~/.{{ item }}" state=link
+  with_items:
     - zshrc
+    - zshrc.optional
