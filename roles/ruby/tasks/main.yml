@@ -5,3 +5,5 @@
   when: not st.stat.exists
 
 - command: rbenv global 2.3.1
+
+- file: src=~/src/github.com/gyugyu/osx-provisioning/roles/ruby/files/gemrc dest=~/.gemrc state=link

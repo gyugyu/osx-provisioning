@@ -1,0 +1,9 @@
+- file: src=~/src/github.com/gyugyu/osx-provisioning/roles/shell/files/gitconfig dest=~/.gitconfig state=link
+
+- lineinfile: dest=/etc/shells line=/usr/local/bin/zsh
+  become: true
+  become_user: root
+
+- user: name={{ ansible_ssh_user }} shell=/usr/local/bin/zsh
+  become: true
+  become_user: root

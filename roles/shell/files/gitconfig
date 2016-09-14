@@ -1,0 +1,15 @@
+[user]
+	email = gyugyu@pepabo.com
+	name = Yusuke Yagyu
+[core]
+	editor = vim
+	autocrlf = false
+	safecrlf = true
+[alias]
+	dmb = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+[ghq]
+	root = ~/src
+[hub]
+	host = git.pepabo.com
+[color]
+	ui = auto
