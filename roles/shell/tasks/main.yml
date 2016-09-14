@@ -7,3 +7,19 @@
 - user: name={{ ansible_ssh_user }} shell=/usr/local/bin/zsh
   become: true
   become_user: root
+
+- name: stat prezto directory
+  stat: path=~/.zprezto
+  register: st
+
+- command: git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
+  when: not st.stat.exists
+
+- file: src="~/.zprezto/runcoms/{{ item }}" dest="~/.{{ item }}" state=link
+  with_items:
+    - zlogin
+    - zlogout
+    - zpreztorc
+    - zprofile
+    - zshenv
+    - zshrc

@@ -10,6 +10,7 @@
     - curl
     - git
     - gibo
+    - go
     - jq
     - mas
     - nodenv

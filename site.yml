@@ -4,3 +4,8 @@
     - appstore
     - nodejs
     - ruby
+    - shell
+  environment:
+    GOPATH: "{{ lookup('env', 'HOME') }}"
+    GHQ_ROOT: "{{ lookup('env', 'HOME') }}/src"
+    PATH: "{{ lookup('env', 'HOME') }}/bin:{{ lookup('env', 'PATH') }}"
