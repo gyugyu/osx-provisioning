@@ -19,6 +19,7 @@
     - pyenv
     - pyenv-virtualenv
     - rbenv
+    - rmtrash
     - ruby-build
     - the_silver_searcher
     - vim

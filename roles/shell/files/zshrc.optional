@@ -47,6 +47,23 @@ if __has "peco"; then
   fi
 fi
 
+__repository_home() {
+  BUFFER="cd ~/src/github.com/gyugyu"
+  zle accept-line
+  zle reset-prompt
+}
+
+__ghe_repository_home() {
+  BUFFER="cd ~/src/git.pepabo.com/gyugyu"
+  zle accept-line
+  zle reset-prompt
+}
+
+zle -N __repository_home
+bindkey '^l' __repository_home
+zle -N __ghe_repository_home
+bindkey '^L' __repository_home
+
 # Ruby
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 

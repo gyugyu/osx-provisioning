@@ -5,6 +5,7 @@
     - nodejs
     - ruby
     - shell
+    - android
   environment:
     GOPATH: "{{ lookup('env', 'HOME') }}"
     GHQ_ROOT: "{{ lookup('env', 'HOME') }}/src"
