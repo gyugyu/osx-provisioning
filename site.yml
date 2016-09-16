@@ -4,8 +4,9 @@
     - appstore
     - nodejs
     - ruby
-    - shell
     - android
+    - shell
+    - defaults
   environment:
     GOPATH: "{{ lookup('env', 'HOME') }}"
     GHQ_ROOT: "{{ lookup('env', 'HOME') }}/src"

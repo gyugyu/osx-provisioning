@@ -1,9 +1,6 @@
 - homebrew: update_homebrew=yes upgrade_all=yes
 
-- homebrew_tap: name={{item}}
-  with_items:
-    - homebrew/dupes
-    - caskroom/cask
+- homebrew_tap: name=caskroom/cask
 
 - homebrew: name={{item}}
   with_items:
@@ -26,8 +23,6 @@
     - wget
     - zsh
     - zsh-completions
-
-- homebrew: name=openssh install_options=with-brewed-openssl,with-keychain-support
 
 - homebrew_cask: name={{item}}
   with_items:
