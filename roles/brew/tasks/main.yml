@@ -8,14 +8,18 @@
     - git
     - gibo
     - go
+    - imagemagick
     - jq
     - mas
+    - memcached
+    - mysql
     - nodenv
     - peco
     - plenv
     - pyenv
     - pyenv-virtualenv
     - rbenv
+    - redis
     - rmtrash
     - ruby-build
     - the_silver_searcher
@@ -26,6 +30,7 @@
 
 - homebrew_cask: name={{item}}
   with_items:
+    - android-studio
     - appcleaner
     - atom
     - caffeine
