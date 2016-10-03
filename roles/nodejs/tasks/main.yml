@@ -1,7 +1,7 @@
 - include: install.yml
   with_items:
-    - 4.5.0
+    - 4.6.0
     - 5.12.0
-    - 6.6.0
+    - 6.7.0
 
-- command: nodenv global 6.6.0
+- command: nodenv global 6.7.0
