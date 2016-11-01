@@ -1,1 +1,12 @@
+- command: defaults write com.apple.Dock autohide -bool true
+  notify: restart dock
+
+- command: defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+
+- command: defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+- command: defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+- command: defaults write NSGlobalDomain com.apple.trackpad.scaling -int 2
+
 - command: defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
