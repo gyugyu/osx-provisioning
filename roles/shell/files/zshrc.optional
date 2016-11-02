@@ -84,6 +84,10 @@ if which plenv > /dev/null; then eval "$(plenv init -)"; fi
 # NodeJS
 export PATH=$HOME/.nodenv/shims:$PATH
 
+# Java
+export JAVA_HOME="$(/usr/libexec/java_home)"
+export PATH="$PATH:$JAVA_HOME/bin"
+
 # Android
 export ANDROID_HOME=/usr/local/opt/android-sdk
 
