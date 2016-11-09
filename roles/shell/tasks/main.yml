@@ -23,6 +23,9 @@
     - zprofile
     - zshenv
 
+- name: enable prezto git module
+  replace: dest=~/.zpreztorc regexp="'prompt'$" replace="'prompt' 'git'" follow=yes
+
 - file: src="~/src/github.com/gyugyu/osx-provisioning/roles/shell/files/{{ item }}" dest="~/.{{ item }}" state=link
   with_items:
     - zshrc
