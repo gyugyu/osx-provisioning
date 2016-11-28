@@ -19,6 +19,8 @@
     - pyenv
     - pyenv-virtualenv
     - rbenv
+    - rbenv-default-gems
+    - rbenv-
     - redis
     - rmtrash
     - ruby-build

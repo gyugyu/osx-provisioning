@@ -1,9 +1,11 @@
-- stat: path=~/.rbenv/versions/2.3.1
+- stat: path=~/.rbenv/versions/2.3.3
   register: st
 
-- command: rbenv install 2.3.1
+- command: rbenv install 2.3.3
   when: not st.stat.exists
 
-- command: rbenv global 2.3.1
+- command: rbenv global 2.3.3
+
+- file: src=~/src/github.com/gyugyu/osx-provisioning/roles/ruby/files/default-gems dest=~/.rbenv/default-gems state=link
 
 - file: src=~/src/github.com/gyugyu/osx-provisioning/roles/ruby/files/gemrc dest=~/.gemrc state=link
