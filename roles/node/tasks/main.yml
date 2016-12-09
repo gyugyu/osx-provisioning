@@ -1,10 +1,10 @@
 - file: path=~/.nodenv state=directory
 
-- file: src=~/src/github.com/gyugyu/osx-provisioning/roles/node/files/default-gems dest=~/.nodenv/default-gems state=link
+- file: src=~/src/github.com/gyugyu/osx-provisioning/roles/node/files/default-packages dest=~/.nodenv/default-packages state=link
 
 - include: install.yml
   with_items:
-    - 4.6.2
+    - 4.3.2
     - 6.9.1
     - 7.2.1
 
