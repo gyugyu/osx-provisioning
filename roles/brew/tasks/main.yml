@@ -1,6 +1,9 @@
 - homebrew: update_homebrew=yes upgrade_all=yes
 
-- homebrew_tap: name=caskroom/cask
+- homebrew_tap: name={{item}}
+  with_items:
+    - caskroom/cask
+    - nodenv/nodenv
 
 - homebrew: name={{item}}
   with_items:
@@ -14,17 +17,17 @@
     - memcached
     - mysql
     - nodenv
+    - nodenv-default-packages
     - peco
     - plenv
     - pyenv
     - pyenv-virtualenv
     - rbenv
     - rbenv-default-gems
-    - rbenv-
-    - redis
     - rmtrash
     - ruby-build
     - the_silver_searcher
+    - tree
     - vim
     - wget
     - zsh
