@@ -97,3 +97,8 @@ alias vi=/usr/local/bin/vim
 alias docker-killall="docker stop \$(docker ps -q)"
 alias docker-rmall="docker rm \$(docker ps -a -q)"
 alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+
+# direnv
+eval "$(direnv hook zsh)"
+
+export EDITOR=/usr/local/bin/vim

@@ -8,6 +8,7 @@
 - homebrew: name={{item}}
   with_items:
     - curl
+    - direnv
     - git
     - gibo
     - go
