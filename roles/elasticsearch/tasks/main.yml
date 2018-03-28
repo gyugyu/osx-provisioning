@@ -1,5 +1,0 @@
-- name: install elasticsearch plugins
-  command: "/usr/local/opt/elasticsearch/libexec/bin/plugin install {{ item }}"
-  with_items:
-    - analysis-kuromoji
-    - mobz/elasticsearch-head

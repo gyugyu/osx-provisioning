@@ -4,10 +4,10 @@
 
 - file: src=~/src/github.com/gyugyu/osx-provisioning/roles/ruby/files/gemrc dest=~/.gemrc state=link
 
-- stat: path=~/.rbenv/versions/2.3.3
+- stat: path=~/.rbenv/versions/2.5.0
   register: st
 
-- command: rbenv install 2.3.3
+- command: rbenv install 2.5.0
   when: not st.stat.exists
 
-- command: rbenv global 2.3.3
+- command: rbenv global 2.5.0

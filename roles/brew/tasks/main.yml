@@ -1,4 +1,4 @@
-- homebrew: update_homebrew=yes upgrade_all=yes
+- homebrew: update_homebrew=yes
 
 - homebrew_tap: name={{item}}
   with_items:
@@ -12,15 +12,11 @@
     - git
     - gibo
     - go
-    - imagemagick
     - jq
     - mas
-    - memcached
-    - mysql
     - nodenv
     - nodenv-default-packages
     - peco
-    - plenv
     - pyenv
     - pyenv-virtualenv
     - rbenv
@@ -37,16 +33,11 @@
 - homebrew_cask: name={{item}}
   with_items:
     - android-studio
-    - appcleaner
-    - atom
     - caffeine
     - docker
     - google-chrome
     - iterm2
     - java
-    - karabiner
-    - slack
+    - slack-beta
     - vivaldi
     - visual-studio-code
-
-- homebrew: name=android-sdk

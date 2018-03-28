@@ -13,3 +13,5 @@
 	host = git.pepabo.com
 [color]
 	ui = auto
+[merge]
+	tool = vimdiff

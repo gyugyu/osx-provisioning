@@ -2,13 +2,10 @@
   roles:
     - brew
     - appstore
-    - android
     - defaults
-    - elasticsearch
     - node
     - ruby
     - shell
-    - ppb
 
   environment:
     GOPATH: "{{ lookup('env', 'HOME') }}"

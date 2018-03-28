@@ -1,9 +1,0 @@
-- homebrew: name={{item}}
-  with_items:
-    - elasticsearch
-    - redis
-
-- homebrew_cask: name={{item}}
-  with_items:
-    - tuntap
-    - tunnelblick
