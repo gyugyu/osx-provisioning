@@ -32,10 +32,8 @@
 
 - homebrew_cask: name={{item}}
   with_items:
-    - android-studio
     - caffeine
     - docker
-    - google-chrome
     - iterm2
     - java
     - vivaldi

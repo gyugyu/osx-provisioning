@@ -1,0 +1,3 @@
+- command: code --install-plugin {{item}}
+  with_items:
+    - vscodevim.vim

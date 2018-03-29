@@ -6,6 +6,8 @@
     - node
     - ruby
     - shell
+    - karabiner-elements
+    - vscode
 
   environment:
     GOPATH: "{{ lookup('env', 'HOME') }}"
